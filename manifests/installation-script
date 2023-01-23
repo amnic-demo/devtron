@@ -2,7 +2,7 @@ LTAG="v0.6.11-rc.0";
 REPO_RAW_URL="https://raw.githubusercontent.com/amnic-demo/devtron/";
 
 ######Generating raw urls
-argocdResource_raw = "https://raw.githubusercontent.com/devtron-labs/devtron/main/manifests/yamls/argocd.yaml";
+argocdResource_raw = "https://raw.githubusercontent.com/amnic-demo/devtron/main/manifests/yamls/argocd.yaml";
 namespace_raw = "https://raw.githubusercontent.com/amnic-demo/devtron/main/manifests/yamls/namespace.yaml"
 ######Downloading the manifests
 argocdResource = download(argocdResource_raw);
