@@ -7,7 +7,9 @@ argocdResource_raw = "https://raw.githubusercontent.com/devtron-labs/devtron/mai
 ######Downloading the manifests
 argocdResource = download(argocdResource_raw);
 kubectl create ns argo-cd
-kubectl apply -f argocdResource -n argo-cd
+log("executed argocd ns create");
+kubectl apply  argocdResource -n argo-cd
+
 ######Downloading the manifests
-pa = kubectl patch -n devtroncd cm/argocd-cm --type "application/json-patch+json" -p argocdResource;
-log("executed argocd setup command");
+#pa = kubectl patch -n devtroncd cm/argocd-cm --type "application/json-patch+json" -p argocdResource;
+#log("executed argocd setup command");
