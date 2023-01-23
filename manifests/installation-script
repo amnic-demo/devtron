@@ -4,12 +4,16 @@ REPO_RAW_URL="https://raw.githubusercontent.com/amnic-demo/devtron/";
 ######Generating raw urls
 argocdResource_raw = "https://raw.githubusercontent.com/amnic-demo/devtron/main/manifests/yamls/argocd.yaml";
 namespace_raw = "https://raw.githubusercontent.com/amnic-demo/devtron/main/manifests/yamls/namespace.yaml"
+
+
 ######Downloading the manifests
 argocdResource = download(argocdResource_raw);
 namespace = download(namespace_raw);
+
 namespaces = kubectl apply namespace;
 log("created namespaces");
+
+
 argocdResource = kubectl apply  argocdResource -n argo-cd;
 ######Downloading the manifests
-#pa = kubectl patch -n devtroncd cm/argocd-cm --type "application/json-patch+json" -p argocdResource;
-#log("executed argocd setup command");
+
