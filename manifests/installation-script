@@ -7,10 +7,9 @@ namespace_raw = "https://raw.githubusercontent.com/amnic-demo/devtron/main/manif
 ######Downloading the manifests
 argocdResource = download(argocdResource_raw);
 namespace = download(namespace_raw);
-ns = kubectl apply namespace;
-log("executed argocd ns create");
+namespaces = kubectl apply namespace;
+log("created namespaces");
 argocdResource = kubectl apply  argocdResource -n argo-cd;
-
 ######Downloading the manifests
 #pa = kubectl patch -n devtroncd cm/argocd-cm --type "application/json-patch+json" -p argocdResource;
 #log("executed argocd setup command");
